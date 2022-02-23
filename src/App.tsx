@@ -1,42 +1,24 @@
-import { useState } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
-function App() {
-  const [count, setCount] = useState(0);
+import Header from '@/components/Header';
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  );
-}
+import { GlobalStyles } from './App.styles';
+
+const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <GlobalStyles />
+    <Header />
+    <main
+      style={{ background: 'linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%)', height: '100vh' }}
+    >
+      <section>List</section>
+    </main>
+    <footer>jump</footer>
+    <ReactQueryDevtools initialIsOpen={false} />
+  </QueryClientProvider>
+);
 
 export default App;
