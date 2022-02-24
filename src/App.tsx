@@ -2,8 +2,9 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
 import Header from '@/components/Header';
+import MovieList from '@/components/MovieList';
 
-import { GlobalStyles } from './App.styles';
+import { GlobalStyles, Main } from './App.styles';
 
 const queryClient = new QueryClient();
 
@@ -11,12 +12,9 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <GlobalStyles />
     <Header />
-    <main
-      style={{ background: 'linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%)', height: '100vh' }}
-    >
-      <section>List</section>
-    </main>
-    <footer>jump</footer>
+    <Main>
+      <MovieList />
+    </Main>
     <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>
 );

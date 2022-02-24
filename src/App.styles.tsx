@@ -1,8 +1,15 @@
 import { Global, css } from '@emotion/react';
+import styled from '@emotion/styled';
+
+import { BACKGROUND } from './styles/linear-gradients';
 
 export const GlobalStyles = () => (
   <Global
     styles={css`
+      html {
+        background: ${BACKGROUND};
+      }
+
       body {
         margin: 0;
         position: relative;
@@ -17,3 +24,9 @@ export const GlobalStyles = () => (
     `}
   />
 );
+
+export const Main = styled.main`
+  max-width: 1000px;
+  margin-inline: auto;
+  padding: 2rem;
+`;
