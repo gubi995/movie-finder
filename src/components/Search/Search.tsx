@@ -1,4 +1,4 @@
-import { useSearchStore } from '@/hooks/useSearchStore';
+import { useStore } from '@/hooks/useStore';
 import { Button } from '@mui/material';
 import { Controller, useForm } from 'react-hook-form';
 
@@ -14,7 +14,7 @@ const Search = () => {
     control,
     formState: { isSubmitting, isValid },
   } = useForm({ defaultValues: movieForm, mode: 'all' });
-  const updateTerm = useSearchStore((state) => state.updateTerm);
+  const updateTerm = useStore((state) => state.updateTerm);
 
   const searchMovie = ({ movieTitle }: MovieForm) => updateTerm(movieTitle);
 

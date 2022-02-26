@@ -1,3 +1,5 @@
+import { fetchWikipediaPage } from '@/api/wikipedia';
+
 export interface Genre {
   name: string;
 }
@@ -10,3 +12,5 @@ export interface Movie {
   overview: string;
   releaseDate: string;
 }
+
+export type MovieDetail = Awaited<ReturnType<typeof fetchWikipediaPage>>;

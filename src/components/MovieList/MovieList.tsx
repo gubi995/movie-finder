@@ -1,14 +1,14 @@
-import { Backdrop, Fab, Typography } from '@mui/material';
+import { Backdrop, Typography } from '@mui/material';
 import { Navigation } from '@mui/icons-material';
 
 import { useMovies } from '@/hooks/useMovies';
 import MovieCard from '@/components/MovieCard';
-import { useSearchStore } from '@/hooks/useSearchStore';
+import { useStore } from '@/hooks/useStore';
 
 import { Section, StyledCard, StyledCircularProgress, StyledFab } from './MovieList.styles';
 
 export const MovieList = () => {
-  const term = useSearchStore((state) => state.term);
+  const term = useStore((state) => state.term);
   const { data: movies, isLoading } = useMovies(term);
   const isMovieFound = movies && movies.length > 0;
 

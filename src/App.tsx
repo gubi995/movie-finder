@@ -3,6 +3,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 
 import Header from '@/components/Header';
 import MovieList from '@/components/MovieList';
+import Modal from '@/components/Modal';
 
 import { GlobalStyles, Main } from './App.styles';
 
@@ -15,6 +16,7 @@ const App = () => (
     <Main>
       <MovieList />
     </Main>
+    <Modal />
     <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>
 );

@@ -10,4 +10,5 @@ export const StyledHeader = styled.header`
   top: 0;
   background-color: white;
   z-index: 1;
+  box-shadow: 1px 1px 3px #ccc;
 `;

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Card, CardContent, CardActions } from '@mui/material';
+import { Card, CardContent } from '@mui/material';
 
 import { BACKGROUND } from '@/styles/linear-gradients';
 
