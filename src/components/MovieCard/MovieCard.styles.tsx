@@ -7,6 +7,7 @@ export const TopSection = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 0.5rem;
 `;
 
 export const TitleAndDateContainer = styled.div`
@@ -38,6 +39,7 @@ export const StyledCardContent = styled(CardContent)`
 export const ChipContainer = styled.div`
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
 `;
 
 export const StyledCard = styled(Card)`

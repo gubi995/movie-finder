@@ -3,7 +3,7 @@ import { VFC } from 'react';
 
 import { useMovieDetail } from '@/hooks/useMovieDetail';
 
-import { LinkContainer, LinksLabel, MovieDetailContent } from './MovieDetail.styles';
+import { LinkContainer, LinksLabel, MovieDetailContent, Detail } from './MovieDetail.styles';
 
 interface MovieDetailProps {
   movieTitle: string;
@@ -17,7 +17,7 @@ const MovieDetail: VFC<MovieDetailProps> = ({ movieTitle }) => {
   const movieDescription = isLoading ? (
     <Skeleton variant="rectangular" width={700} height={200} role="progressbar" />
   ) : (
-    <Typography>{movieDetail}</Typography>
+    <Detail>{movieDetail}</Detail>
   );
 
   const movieLinks = isLoading ? (
