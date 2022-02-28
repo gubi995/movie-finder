@@ -21,10 +21,10 @@ interface MovieCardProps {
 const MovieCard: VFC<MovieCardProps> = ({
   movie: { name, genres, overview, releaseDate, score },
 }) => {
-  const setContent = useStore((state) => state.setContent);
+  const setModalContent = useStore((state) => state.setModalContent);
 
   const openDetails = () => {
-    setContent(<MovieDetail movieTitle={name} />);
+    setModalContent(<MovieDetail movieTitle={name} />);
   };
 
   return (

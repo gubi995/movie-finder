@@ -2,15 +2,15 @@ import { ReactNode } from 'react';
 import create from 'zustand';
 
 interface State {
-  term: string;
-  content: ReactNode;
-  updateTerm: (term: string) => void;
-  setContent: (term: ReactNode) => void;
+  searchTerm: string;
+  modalContent: ReactNode;
+  updateSearchTerm: (term: string) => void;
+  setModalContent: (term: ReactNode) => void;
 }
 
 export const useStore = create<State>((set) => ({
-  term: '',
-  content: null,
-  updateTerm: (term: string) => set({ term }),
-  setContent: (content: ReactNode) => set({ content }),
+  searchTerm: '',
+  modalContent: null,
+  updateSearchTerm: (term: string) => set({ searchTerm: term }),
+  setModalContent: (content: ReactNode) => set({ modalContent: content }),
 }));

@@ -8,8 +8,8 @@ import { useStore } from '@/hooks/useStore';
 import { Section, StyledCard, StyledCircularProgress, StyledFab } from './MovieList.styles';
 
 export const MovieList = () => {
-  const term = useStore((state) => state.term);
-  const { data: movies, isLoading } = useMovies(term);
+  const searchTerm = useStore((state) => state.searchTerm);
+  const { data: movies, isLoading } = useMovies(searchTerm);
   const isMovieFound = movies && movies.length > 0;
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -17,7 +17,7 @@ export const MovieList = () => {
   if (isLoading) {
     return (
       <Backdrop open>
-        <StyledCircularProgress />
+        <StyledCircularProgress data-testid="loading" />
       </Backdrop>
     );
   }
@@ -40,7 +40,7 @@ export const MovieList = () => {
       {movies?.map((movie) => (
         <MovieCard key={movie.id} movie={movie} />
       ))}
-      <StyledFab variant="circular" onClick={scrollToTop}>
+      <StyledFab variant="circular" onClick={scrollToTop} data-testid="scroll-to-top-button">
         <Navigation />
       </StyledFab>
     </Section>

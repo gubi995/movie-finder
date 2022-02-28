@@ -15,13 +15,13 @@ const MovieDetail: VFC<MovieDetailProps> = ({ movieTitle }) => {
   const { imdb, wikipedia } = links ?? {};
 
   const movieDescription = isLoading ? (
-    <Skeleton variant="rectangular" width={700} height={200} />
+    <Skeleton variant="rectangular" width={700} height={200} role="progressbar" />
   ) : (
     <Typography>{movieDetail}</Typography>
   );
 
   const movieLinks = isLoading ? (
-    <Skeleton variant="rectangular" width={200} height={20} />
+    <Skeleton variant="rectangular" width={200} height={20} role="progressbar" />
   ) : (
     <LinkContainer>
       <LinksLabel fontFamily="Montserrat">Links:</LinksLabel>

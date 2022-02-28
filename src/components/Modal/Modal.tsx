@@ -5,17 +5,20 @@ import { useStore } from '@/hooks/useStore';
 import { CloseButton, ModalContent, StyledModal } from './Modal.styles';
 
 const Modal = () => {
-  const { content, setContent } = useStore(({ content, setContent }) => ({ content, setContent }));
+  const { modalContent, setModalContent } = useStore(({ modalContent, setModalContent }) => ({
+    modalContent,
+    setModalContent,
+  }));
 
-  const closeModal = () => setContent(null);
+  const closeModal = () => setModalContent(null);
 
   return (
-    <StyledModal open={!!content} onClose={closeModal}>
+    <StyledModal open={!!modalContent} onClose={closeModal}>
       <ModalContent>
         <CloseButton onClick={closeModal}>
           <Close />
         </CloseButton>
-        {content}
+        {modalContent}
       </ModalContent>
     </StyledModal>
   );

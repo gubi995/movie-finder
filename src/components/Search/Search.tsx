@@ -14,9 +14,9 @@ const Search = () => {
     control,
     formState: { isSubmitting, isValid },
   } = useForm({ defaultValues: movieForm, mode: 'all' });
-  const updateTerm = useStore((state) => state.updateTerm);
+  const updateSearchTerm = useStore((state) => state.updateSearchTerm);
 
-  const searchMovie = ({ movieTitle }: MovieForm) => updateTerm(movieTitle);
+  const searchMovie = ({ movieTitle }: MovieForm) => updateSearchTerm(movieTitle);
 
   return (
     <Form onSubmit={handleSubmit(searchMovie)}>

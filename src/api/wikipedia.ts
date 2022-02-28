@@ -1,4 +1,6 @@
-import { WIKIPEDIA_API_URL, WIKIPEDIA_URL } from './constants';
+import axios, { AxiosResponse } from 'axios';
+
+import { WIKIPEDIA_API_URL, WIKIPEDIA_QUERY_PARAMS, WIKIPEDIA_URL } from './constants';
 
 interface WikiPageValue {
   extlinks?: Record<string, string>[];
@@ -13,9 +15,10 @@ interface WikipediaResponse {
 
 export const fetchWikipediaPage = async (title: string) => {
   const encodedTitle = encodeURIComponent(title);
-  const response = await fetch(`${WIKIPEDIA_API_URL}&titles=${encodedTitle}`);
-  const data: WikipediaResponse = await response.json();
-  const pages = data.query.pages;
+  const response: AxiosResponse<WikipediaResponse> = await axios(
+    `${WIKIPEDIA_API_URL}${WIKIPEDIA_QUERY_PARAMS}&titles=${encodedTitle}`
+  );
+  const pages = response.data.query.pages;
   const isPageNotFound = Boolean(pages['-1']);
 
   if (isPageNotFound) {
