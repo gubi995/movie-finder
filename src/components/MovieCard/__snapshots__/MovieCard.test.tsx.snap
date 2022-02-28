@@ -58,6 +58,7 @@ exports[`MovieCard component should render movie data 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .emotion-3 {
@@ -160,6 +161,10 @@ exports[`MovieCard component should render movie data 1`] = `
   display: -ms-flexbox;
   display: flex;
   gap: 0.5rem;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .emotion-9 {

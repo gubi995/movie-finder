@@ -17,7 +17,7 @@
       "eslint --cache --fix",
       "prettier --write"
     ],
-    "*.{html}": [
+    "*.html": [
       "prettier --write"
     ]
   },
